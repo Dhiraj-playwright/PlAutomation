@@ -1,0 +1,20 @@
+import {test,expect} from '@playwright/test'
+test("Keyboard",async({page})=>
+{
+    await page.goto("https://testautomationpractice.blogspot.com/")
+    await page.locator("input#name").fill("dhraj")
+    await page.keyboard.press('ArrowLeft')
+    await page.keyboard.press('ArrowLeft')
+    await page.keyboard.press('ArrowLeft')
+    await page.keyboard.type('i')
+    await page.keyboard.press('Tab')
+    await page.keyboard.type("Jadhav")
+    await page.waitForTimeout(3000)
+    await page.keyboard.press('Backspace')
+    await page.waitForTimeout(3000)
+    await page.keyboard.press('Control+a')
+    await page.keyboard.press('Control+C')
+    await page.keyboard.press('Tab')
+    await page.keyboard.press('Control+v')
+    await page.waitForTimeout(3000)
+})
